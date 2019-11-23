@@ -11,7 +11,7 @@ h1 {text-align: center;}
   flex-wrap: wrap;
   padding-bottom: 3rem;
 
-  div
+  a
   {
     width: 40%;
     height: 12rem;
@@ -23,11 +23,8 @@ h1 {text-align: center;}
     border: 3px solid;
 
     transition: all 0.2s;
-
-    a
-    {
       text-decoration: none;
-    }
+
     p
     {
       font-family: sans;
@@ -37,7 +34,7 @@ h1 {text-align: center;}
     }
   }
 
-  div:hover
+  a:hover
   {
     transform: scale(1.1);
   }

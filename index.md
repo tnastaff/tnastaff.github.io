@@ -14,33 +14,23 @@ layout: index
 # Articles categorized by...
 
 <div id = "categories">
-  <div>
-  <a href="/">
-  <p>Game</p>
+  <a href="/categories/games">
+    <p>Game</p>
   </a>
-  </div>
 
-  <div>
   <a href="/">
   <p>Year</p>
   </a>
-  </div>
 
-  <div>
   <a href="/">
   <p>Character</p>
   </a>
-  </div>
 
-  <div>
   <a href="/">
   <p>OWI Member</p>
   </a>
-  </div>
 
-  <div>
   <a href="/">
   <p>TNA Collection</p>
   </a>
-  </div>
 </div>
