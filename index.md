@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: index
 ---
 
 <!--
@@ -11,6 +11,36 @@ layout: post
 {% endfor %}
 -->
 
-{% for p in site.pages %}
-<p><a href="{{p.url}}">{{p.title}}</a></p>
-{% endfor %}
+# Articles categorized by...
+
+<div id = "categories">
+  <div>
+  <a href="/">
+  <p>Game</p>
+  </a>
+  </div>
+
+  <div>
+  <a href="/">
+  <p>Year</p>
+  </a>
+  </div>
+
+  <div>
+  <a href="/">
+  <p>Character</p>
+  </a>
+  </div>
+
+  <div>
+  <a href="/">
+  <p>OWI Member</p>
+  </a>
+  </div>
+
+  <div>
+  <a href="/">
+  <p>TNA Collection</p>
+  </a>
+  </div>
+</div>

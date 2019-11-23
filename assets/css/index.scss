@@ -1,0 +1,44 @@
+---
+---
+
+main {display: block;}
+h1 {text-align: center;}
+
+#categories
+{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 3rem;
+
+  div
+  {
+    width: 40%;
+    height: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #444444;
+    margin: 5px;
+    border: 3px solid;
+
+    transition: all 0.2s;
+
+    a
+    {
+      text-decoration: none;
+    }
+    p
+    {
+      font-family: sans;
+      font-size: 3rem;
+      text-transform: uppercase;
+      color: #efefef;
+    }
+  }
+
+  div:hover
+  {
+    transform: scale(1.1);
+  }
+}
