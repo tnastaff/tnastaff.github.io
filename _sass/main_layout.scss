@@ -88,6 +88,13 @@ main
     color: black;
   }
 
+  pre
+  {
+    overflow: auto;
+    font-size: 1rem;
+    font-family: monospace;
+  }
+
 }
 
 #sidebar
