@@ -1,0 +1,41 @@
+---
+layout: page
+title: 'Part 2: Ratworld???'
+date: 2018-01-18 17:15:27.000000000 +01:00
+type: page
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+  _wp_page_template: ''
+  _publicize_pending: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+author:
+  login: magogonthemarchstaff
+  email: magogonthemarch@mail.com
+  display_name: magogonthemarchstaff
+  first_name: ''
+  last_name: ''
+permalink: "/part-2-ratworld/"
+---
+<p><em>CG Technical Director, Matt Aldridge</em></p>
+<p><strong>Ratworld???</strong></p>
+<p>My first run in with the rat was when I caught a glimpse of new artwork up on the wall outside of Farzad's office. It was the coolest looking thing I had ever seen and simply couldn't wait to build it. This is the part where I ran to my producer begging and pleading with him to let me have 'em. After a bit of "I want it, I want it, I want it" he caved and I was off to the land of Farzad where this little beauty had been drawn.</p>
+<p>The first step for bringing an Oddworld character to life is the all important Hand-off meeting. I sit across from Farzad's desk while he and I go over the key points of the Rat's design. We focus on what kind of expressions the character needs to make, how he will move, and any areas that I see potential snags. You can always make something work on paper but translating it to 3D can expose all kinds of problems or limitations that weren't apparent before. Having a sculpture made helps to expose some of these issues and find creative solutions for them.</p>
+<p>There's a lot to consider when modeling a character for cinematics. How big of a role do they play in the game? How close will the camera get? How many do they expect to have on screen at once? With these in mind I try and keep the model light and efficient, yet still detailed enough for all of his game scenes. This also factors into how much time I'm given to complete the task. One does not need to spend a great deal of time for a character that won't be seen very large and has very little screen time. So with this in mind I'm off to begin work.</p>
+<p><img class="alignnone size-full wp-image-8169" src="{{ site.baseurl }}/assets/1.jpg" alt="1" width="300" height="400" /> Before starting any digital modeling I always go low tech first with a pad and pencil. I start by drawing different patterns to figure out how I'm going to approach the model and lay out his various surfaces, a sort of poor mans road map. Once I've got a pretty good guide on paper I launch Maya and begin blocking out our rat. Three days later with a few tweaks here and there from Farzad, I have Oddworld's first rat on my computer screen ready for Lorne to see.</p>
+<p>Our rat is built out of NURBS ( Non-Uniform Rational B-splines) in Maya which means that he'll be composed of many different pieces of geometry. The trick with Nurbs is to make all of those separate shapes tangent on all sides so it appears to be one solid piece.</p>
+<p><img class="alignnone size-full wp-image-8176" src="{{ site.baseurl }}/assets/133.jpg" alt="133" width="55" height="73" />So here we see a shaded wire frame view showing the many lines of informationmaking up his shape. For the image on the right, I've spaced all of the patches showing how they fit together and give the illusion of a solid rat.<img class="alignnone size-full wp-image-8177" src="{{ site.baseurl }}/assets/134.jpg" alt="134" width="55" height="73" /></p>
+<p>&nbsp;</p>
+<p><img class="alignnone size-full wp-image-8170" src="{{ site.baseurl }}/assets/2.jpg" alt="2" width="400" height="300" /> A benefit for using Nurbs is that we can control the tessellation of each patch dependent upon each shot. Below is an example of how we can tessellate the geometry to increase the smoothness of the model for closer cameras. If the rat is far off in the distance then we only need the bare amount of information to generate his image on screen. There are instances where we need to have the rat in full frame and this low of a setting won't hold up that close to the camera. We can literally set the amount of detail we want on the rat so it will always appear smooth and organic. Here I have the rat on a tessellation of one in the middle and on the right he's on a level of 3, so that's triple the amount of geometry that I actually modeled. Having more spans of geometry makes for more information the computer has to process when it calculates the final image, thus the more detail the longer it takes to get your images. This is why we want to have control over the level of detail when we render our movies.</p>
+<p>&nbsp;</p>
+<p><img class="alignnone size-full wp-image-8175" src="{{ site.baseurl }}/assets/12.jpg" alt="12" width="55" height="73" />Next we send the rat off to our paint department where he gets his textures and wrinkles painted. This is a small sample of his front face map. After we get these pictures back from paint I sit down and setup shaders that will control how the skin reacts to light, the depth of his bumps, and how shiny or moist looking he is.</p>
+<p><img class="alignnone size-full wp-image-8171" src="{{ site.baseurl }}/assets/3.jpg" alt="3" width="300" height="400" />Now we have to setup the rat so he can be animated. I review the blueprints and anatomy to place bones in the character which will be used to deform his geometry later. On the left is a quick sketch Farzad did for me to show where the spine and skull should be in his structure. The image on the right is a lo res version of the rat with his skeleton visible. We make a greatly simplified version of our characters like this because it can be manipulated faster in the computer which makes for speedy animation feedback.<img class=" size-full wp-image-8172 alignnone" src="{{ site.baseurl }}/assets/4.jpg" alt="4" width="300" height="400" /></p>
+<p>With the bones in place I next setup his deformations and any special controls <img class="alignnone size-full wp-image-8173" src="{{ site.baseurl }}/assets/5.jpg" alt="5.jpg" width="400" height="300" />that our animators will want on the characters animation rig. For some characters like the rat if the animator selects the foot control they can also control all of the toes with the same object that dictates the orientation and translation of the foot. This helps to block out animation faster and still allows the animator to go in and control each individual bone if they need to.</p>
+<p>&nbsp;</p>
+<p><img class="alignnone size-full wp-image-8174" src="{{ site.baseurl }}/assets/6.jpg" alt="6" width="400" height="300" />With all of his controls in place we send him off to be animated for the first time. Animator, Mauricio Hoffman was the first guy to touch the rat and given the task to figure out how it would look hopping around Oddworld.</p>
+<p>Once everything is signed off on the high res we then place our new character in the pipeline and end up with the latest glowing eyed Inhabitant. I feel pretty confident that I'm the only guy out there with a pig nosed, one legged rat under his belt...Mother would be so proud.</p>

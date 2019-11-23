@@ -1,0 +1,40 @@
+---
+layout: page
+title: 'Part 6: Motion Sensors in New ‘n’ Tasty'
+date: 2017-09-28 07:02:54.000000000 +02:00
+type: page
+parent_id: '1688'
+published: true
+password: ''
+status: publish
+categories: []
+tags:
+- matt glanville
+- motion sensors
+meta:
+  _wp_page_template: ''
+  _publicize_pending: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+author:
+  login: ncslig
+  email: magogonthemarchnews@gmail.com
+  display_name: N.C. Slig
+  first_name: N.C. Slig
+  last_name: ''
+permalink: "/designer-diaries/new-n-tasty-development-diary/part-5-motion-sensors-in-new-n-tasty/"
+---
+<h3>New 'n' Tasty Designer Diary</h3>
+<pre>Author: Matt Glanville
+
+Source: <a href="http://crowbarska.tumblr.com/post/85139079903/game-design-blog-motion-sensors-in-new-n" target="_blank" rel="noopener">http://crowbarska.tumblr.com/post/85139079903/game-design-blog-motion-sensors-in-new-n</a></pre>
+<p><img class="alignnone size-full wp-image-1717" src="{{ site.baseurl }}/assets/tumblr_n59qdedutn1ry5846o1_1280.jpg" alt="tumblr_n59qdeduTn1ry5846o1_1280" width="1280" height="720" /></p>
+<p>We just released a comparison shot on the <a href="http://t.umblr.com/redirect?z=http%3A%2F%2Fwww.oddworld.com%2F2014%2F05%2Fnew-n-tasty-comparison-2-stockyards%2F&amp;t=YzY5YjkyZWIwZjBhZWE0ZmJhMDQ4ZWFmYzQ2ZTNlMDA3ODg1NjA1YixDUjN5MjBTbA%3D%3D&amp;b=t%3APwKZoMSQ_vDGUA9b65pXug&amp;p=http%3A%2F%2Fcrowbarska.tumblr.com%2Fpost%2F85139079903%2Fgame-design-blog-motion-sensors-in-new-n&amp;m=1" target="_blank" rel="noopener">Oddworld blog</a>, comparing the Stockyards area from <em>New 'n’ Tasty</em> to the version in the original 1997 game.</p>
+<p>In most areas of <em>New 'n’ Tasty</em>, our starting point was to take the original game and simply “make it 3D”. After implementation, in many cases, it became apparent that this wasn’t enough. The Motion Sensors in the Stockyards are a perfect example of that.</p>
+<p>The original game features simple beams of red light that slide left and right. They are projected from a lens in the background. Because the game is rendered orthographically (totally flat), the beams have no depth to them.</p>
+<p>The problem is clear when you give this beam depth and view it with perspective.</p>
+<p>You can stick with a narrow pole-shaped object, but this looks weird when it intersects with round characters like Abe. Or you can extrude the pole’s sides to make a tall, flat panel, but there is no reason the light should be contained within an arbitrary box.</p>
+<p>Our solution was to create these mechanical frames that slide along like airport metal detectors moving across rails. We also ended up removing the giant projector from the background here as it simply became a distraction in an already busy scene (although eagle-eyed escapees might still be able to spot it somewhere in the Stockyards).</p>
+<p>The frames read well from all perspectives now; the red beams are clearly visible from sharp angles and they flatten out to thin, dark blocks when the camera shows them directly from the side.</p>
+<p>Most importantly (at least to me, as a designer!) we managed to keep the original classic gameplay completely intact without rendering limitations forcing us to make compromises. This is my favourite kind of solution!</p>
+<p>I’d say this change was a resounding success. What do you think?</p>

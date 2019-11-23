@@ -1,0 +1,55 @@
+---
+layout: page
+title: 'Part 2: Oddworld: Stranger''s Wrath – Dev Diary Part 2'
+date: 2018-02-22 00:24:17.000000000 +01:00
+type: page
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+  _wp_page_template: ''
+  _publicize_pending: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+author:
+  login: magogonthemarchstaff
+  email: magogonthemarch@mail.com
+  display_name: magogonthemarchstaff
+  first_name: ''
+  last_name: ''
+permalink: "/part-2-oddworld-strangers-wra/"
+---
+<pre>Author: Just Add Water Ltd.
+
+Source: http://www.jawltd.com/2010/10/oddworld-stranger%E2%80%99s-wrath-%E2%80%93-dev-diary-pt-2/</pre>
+<p>In this Dev Diary we are going to take a closer look at the character pipeline and share what we are doing to bring them up to date.</p>
+<p>Before beginning any actual 3D work on this project we first had to asses the current art assets supplied by Oddworld. Unfortunately this involved searching through gigabyte after gigabyte of very old data, most of which was in Maya 4.5 format, (<em>we are currently on Maya 2011, Maya 4.5 was used back in 2005</em>). This data consisted of the original XBox assets as well as some of the super high resolution CG models used for the pre-rendered cinematics, as well as lots of other unusable things.</p>
+<p>Because the artwork for the original Stranger’s Wrath had been created in Maya 4.5 it had also been exported to the game engine from the same application, meaning the plug-ins would not work in the current version. So the first obstacle to overcome was to find a way to go back and work in an application which is now five years old, a lifetime in game development terms.</p>
+<p>Luckily, after much head scratching we were able to remedy this allowing us to first create the models in Maya 2011, and then pull them into Maya 4.5 to set-up and export into the game.</p>
+<p>With this part of the pipeline complete we then had to decide how to tackle the characters. When moving from 3,000 polygons to 20,000 you can’t just hit the “smooth” button and hope for the best. We had three options…</p>
+<p><strong>Option 1: Add more geometry to the existing models, smoothing out the shape in key areas while also updating the texture pages to add more detail.</strong></p>
+<p>This would be the quickest option, giving satisfactory results but would not bring the characters up to today’s standards.</p>
+<p><strong>Option 2: Start the model from scratch using the CG models as a base.</strong></p>
+<p>This is the preferred option as most game artwork is created this way, we already had a high resolution model pre-made for us to use which would give far superior surface detail in the form of normal maps. Unfortunately this was is more time consuming and could mean each character takes two weeks to complete.</p>
+<p><strong>Option 3: Create a new model, using the original and any existing concept art to guide us.</strong></p>
+<p>This option would be the “last resort” option as it could potentially take the most time, that being said for smaller characters like the critters it could work in our favour.</p>
+<p>In a perfect world, with a more relaxed schedule and budget we would opt for options 2 or 3 to give us the best looking characters. One problem we also had to consider was that we didn’t have the CG data for all characters so we would need to choose an option on a per character basis rather than stick with one for the entire project.</p>
+<p>Luckily for Stranger we did have a great CG model to use, so to create him we did the following –</p>
+<ul>
+<li>First we sorted through the numerous versions of him in the Oddworld data until we found, and compiled the exact version we needed.</li>
+<li>With this model ready we next converted the CG model into polygons. (<em>Some of the models were originally created using NURBS which are unusable in a game engine</em>). What this then gave us was a high resolution model which we could optimize, reducing it from 500k to the 20k mark we needed.</li>
+<li>Once the main model was within the polygon budget it was then time to recreate the UV maps. We did this because either the existing UV`s were lost in translation, or they were broken during the reduction process.</li>
+<li>Next it was time to create the texture pages, for this we could use existing textures initially and enhance them through the use of Ambient Occlusion, Normal and Specular maps.</li>
+<li>When the main model was complete we then stripped him down and exported him into Maya 4.5 to be rigged, have the appropriate shaders attached and exported to the game engine.</li>
+</ul>
+<p><img class="alignnone size-full wp-image-8710" src="{{ site.baseurl }}/assets/strangerwip.jpg" alt="StrangerWIP" width="1000" height="462" /></p>
+<p>Believe me, it wasn’t as easy as it sounds in the list above, there were other obstacles to overcome as we worked to get him in and running around.</p>
+<p>With Stranger done we then decided to tackle the Critters, and first was the Fuzzle. Now, unlike Stranger we had no CG model to start with, and the original was such a low resolution model upgrading it directly wasn’t an option. For this guy we went with option 3 and started with a new build.</p>
+<p>This not only gave us the opportunity to increase the polygon count but also update the overall look of this creature to look more like the original concept artwork.</p>
+<p>You can see the work in progress, and final versions of this guy below…now we just need to get him into the game.</p>
+<p><img class="alignnone size-full wp-image-8712" src="{{ site.baseurl }}/assets/fuzzlewip.jpg" alt="FuzzleWIP" width="1000" height="495" /></p>
+<p><img class="alignnone size-full wp-image-8711" src="{{ site.baseurl }}/assets/fuzzlecomplete.jpg" alt="FuzzleComplete" width="867" height="466" /></p>
+<p>So who will we be working on next? You will just have to wait and see…</p>

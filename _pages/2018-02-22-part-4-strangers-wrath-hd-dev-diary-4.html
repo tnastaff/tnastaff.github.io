@@ -1,0 +1,64 @@
+---
+layout: page
+title: 'Part 4: Stranger''s Wrath HD - Dev Diary 4'
+date: 2018-02-22 15:53:23.000000000 +01:00
+type: page
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+  _wp_page_template: ''
+  _oembed_9f646a9a99e13244f1a7307666a9ccd5: "{{unknown}}"
+  _oembed_2479d3c3ed04a653e9ea7a3015b81c58: "{{unknown}}"
+  _publicize_pending: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _oembed_96a80cb66079fc3a4ec265b4adbdfbc3: "{{unknown}}"
+  _oembed_71f9e0112995b9d1800832774ed5a9e6: "{{unknown}}"
+  _oembed_8060d5265d7d602b93bf69cbf710698b: "{{unknown}}"
+  _oembed_f257f9ae1a0b071a9f6bdc62deeb98b4: "{{unknown}}"
+  _oembed_6b911875ff092000fe798218e0f424f4: "{{unknown}}"
+  _oembed_52bfe3637585be10a0f5a1f225e65519: "{{unknown}}"
+author:
+  login: magogonthemarchstaff
+  email: magogonthemarch@mail.com
+  display_name: magogonthemarchstaff
+  first_name: ''
+  last_name: ''
+permalink: "/part-4-strangers-wrath-hd-dev-diary-4/"
+---
+<pre>Author: Liam Jones
+
+Source: http://www.oddworld.com/2011/12/strangers-wrath-hd-dev-diary-4/</pre>
+<p>Have you seen our new menu, sir? Hello all and welcome to what critics are already calling “The Newest Dev Diary to come out of…</p>
+<p><em>Have you seen our new menu, sir?</em></p>
+<p>Hello all and welcome to what critics are already calling “The Newest Dev Diary to come out of JAW since the last one”. I’ll be your guide through the interesting chronicle that is my Development Diary, and its chosen subject of GUI (That’s Graphical User Interface for anyone not in the know, and now that you’ve been introduced just call it gooey, everyone does). Throughout this rollercoaster ride of thought provoking prose, I intend to confront your preconceptions about making GUIs, before smashing it into a fine paste. If you do not have any preconceptions then one shall be provided for you.</p>
+<p><strong>Step 1 in building a new GUI: Concept</strong></p>
+<p>We were pretty lucky when it came to the GUI in Stranger’s Wrath for a couple of reasons; first of all, we already had a fully functioning menu system. This meant that we already had a proof of concept. Second of all we had the original concept art completed by hugely talented people whose skill I couldn’t hope to emulate in my wildest dreams (so I didn’t try).</p>
+<p>This all amounted to me having to do very little in terms of high concepts (unless Stew asks, in which case I did loads). The concepts I did took the old concepts as a jumping off point whilst attempting to factor in the western feel of the game itself.</p>
+<p>These concepts were okayed and work began shortly afterwards.</p>
+<p><strong>Step 2: The actual development</strong></p>
+<p>At this point it is probably important to let you know that the GUI in Stranger’s Wrath is made using a little known interactive platform known as “Flash”. Developing something like a GUI in Flash requires two main components: Artwork and Programming (I’m sure someone is already preparing to email me in order to explain that Flash programming isn’t real programming. Such an email will likely be deleted, along with the Russian watch sales pitches and Nigerian princes.).</p>
+<p>The Artwork aspect of the menus was fairly straight forward; following the concepts allowed for a list of required artwork to be made. Also, the inherently repetitive nature of GUI systems allowed me to define Photoshop layer styles so that, in the very likely event of me forgetting to make something, I could always go back and knock it together when needed.</p>
+<p>The programming (shut up) aspect was much more complicated and required a fair amount of custom classes (singleton or otherwise) to function. It would be a huge waste of time to go through and name them all, not to mention boring as merry sin, so I will just talk you through the two I was most proud of at the time. First of all was the typeface converter.</p>
+<p>This class functioned as a proxy for text strings. You defined a typeface class, imported all of the character images required by that typeface into the library, then, once you pass in a string, it would return a fully justified, kerned, self-contained sprite of nicely pre rendered letters that you could then place anywhere you liked. Being done at runtime this meant that the text strings could not only be dynamic, but also pretty, and everyone loves pretty.</p>
+<hr />
+<p>http://www.oddworld.com/wp-content/uploads/2011/11/testshow.swf</p>
+<hr />
+<p>The second programming problem I faced was the creation of a class which would create an entire menu list of items for me at runtime, essentially allowing menu transitions to be handled with the minimum of fuss “in house” so to speak. All the developer had to do was pass in the images required for the default/highlighted button states, define the names of the buttons and the actions that followed once they’d been selected and BOOM, instant interactive menu ; as you can imagine this saved a fairly hefty amount of time in the long run. Well… It would have done if it wasn’t for step three.</p>
+<p><strong>Step 3: Throw it all away</strong></p>
+<p>Unfortunately, due to circumstances out of anyone’s control, we ended up having to scrap the original plan of changing the game’s Flash projecting code. This meant that we would need to use the projector that Stranger’s Wrath originally required: Flash Player 6. In case you’re not up on (or indeed down with) the histories of Flash development, Flash Player 6 supports ActionScript 1, whereas the (completed by this point) menus outlined in Step 1 and 2 were ActionScript 3. These are about as compatible as chalk and cheese.</p>
+<p>“No worries though, Liam! You’ve still got the art!” I hear you cry out to me. Unfortunately, no. Word trickled down to me that the big L man himself wasn’t a fan of the style I’d gone for, so, just like the code, it had to be changed.</p>
+<p><strong>Step 4: Do it All Again</strong></p>
+<p>Fortunately, working from the experience I had gained from the first GUI designs, I managed to come up with a new one that I honestly feel looks much better than my first design. Which is nice. From then on the coding was much more a case of making the new Artwork fit in with the original code where possible (and learning how to code ActionScript 1 where not). There are a couple of things I couldn’t do with ActionScript 1 which bothered me slightly; the bounty store had to be simplified, and my (quite frankly, glorious) typeface system had to go too. Over all though I think the new menus work well within the limiting confines of their implementation (no _width property?!).</p>
+<hr />
+<p>http://www.oddworld.com/wp-content/uploads/2011/11/BountyStoreMenu.swf</p>
+<hr />
+<p><strong>Step 5: Languages, and why my life would be easier if everyone spoke English</strong></p>
+<p>It’s not unreasonable for people to expect to be able to play a game in their native country and have the menus display in their native tongue. However, that doesn’t stop it from being extremely difficult to make a menu that functions equally well in 5 different languages, especially when each one of those languages has crazy long words in them, and you’re unable to measure the width of anything (seriously, no _width property?!). I think I’m correct in saying that every single bug report for the menus were caused by either German, Spanish, or Italian text being too big for the box it was supposed to live in. Once it became apparent that pretending that Germany and Spain spoke English as their first language wasn’t an option, I was forced to widen a couple of menus and shrink the font in a number of places. Then France made me shrink it some more.</p>
+<p><strong>Step 6: Do something else</strong></p>
+<p>I think this is the most important step of all; knowing when to just drop it and go do something else (unless a really big bug pops up). With a project that you’ve worked on day in day out such as this, it’s very easy to get stuck adding and adding until you’ve bloated the menus to a ridiculous file size and they collapse under their own grotesque, unlovable weight. The moment when I decided to leave it was around the time I realised I was tweaking button positions by single pixels. At that point there is more than likely something better you can be doing with your time.</p>
+<p>Well, I hope you enjoyed this missive describing the trials and tribulations of this humble menu maker man, and if you have any questions, don’t hesitate to point them all in Alf’s direction. He makes out like he doesn’t like them, but I have it on very good authority that, in reality, he loves the attention. Or, just add me on Twitter: I’m <span style="text-decoration:underline;"><a href="http://twitter.com/g1itcher" target="_blank" rel="noopener">@G1itcher</a></span>, that’s with one 1.</p>

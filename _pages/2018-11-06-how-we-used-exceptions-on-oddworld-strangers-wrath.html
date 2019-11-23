@@ -1,0 +1,84 @@
+---
+layout: page
+title: 'How we used Exceptions on Oddworld : Stranger''s Wrath'
+date: 2018-11-06 19:08:19.000000000 +01:00
+type: page
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+  _publicize_pending: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+author:
+  login: magogonthemarchstaff
+  email: magogonthemarch@mail.com
+  display_name: magogonthemarchstaff
+  first_name: ''
+  last_name: ''
+permalink: "/how-we-used-exceptions-on-oddworld-strangers-wrath/"
+---
+<pre>Author: Charles Bloom
+
+Date: 13/05/2017
+
+Source: http://cbloomrants.blogspot.com/2017/05/how-we-used-exceptions-on-oddworld.html</pre>
+<p>Apparently I talked about this before in my Game Tech talk in 2004, but I never wrote it on my bloggy blog, so here goes.</p>
+<p>On Stranger we used exceptions as a last gasp measure during dev to try to keep the game running for our content creation team. It worked great and I think everyone should use a similar system in game development.</p>
+<p>We did not ship with exceptions. They were only used during development. To be clear, what we did NOT do :</p>
+<pre><span style="color:green;">
+We did NOT :
+
+Use C++ exceptions (we used SEH with __try , __throw , __except)
+
+Try to do proper "exception-safe" C++ ala Herb Sutter
+  (this is a bizarre and very tricky complex way of writing C++ that requires
+  doing everything in a different way than the normal linear imperative code; it
+  uses lots of swaps and temp objects)
+
+Return every error with exceptions ; most errors were via return value
+
+Try to unwind exceptions cleanly/robustly
+
+Just kill the game on exceptions
+
+</span></pre>
+<p>Any error that we expected to happen, or could happen in ship, such as files not found, media errors, etc. were handled with return codes. The standard way of functions returning codes and the calling code checking it and handling it somehow.</p>
+<p>Also, errors that we could detect and just fix immediately, but not return a code, we would just fix. So, like say you tried to create an Actor and the pref file describing that actor didn't exist, we'd just print an error (and automatically email it to dev@oddworld) and just not create that Actor. Hey, shit's wrong, but you can continue.</p>
+<p>The principle is : don't block artist A from working on their stuff just because the programmers or some other artist checked in other broken stuff. If possible, just disable the broken stuff, because artist A can probably continue.</p>
+<p>Say the guys working on particle systems keep checking in broken stuff that would crash the game or cause lots of errors - fine. The rest of the art team can still be syncing to new builds, and they will just see an error printed about "particle system XX failed ; disabled" and then they can continue working on their other stuff.</p>
+<p>Blocking the art/design team (potentially a lot of people) for even 5 minutes while you try to roll things back or whatever to fix it is really a HUGE HUGE disaster and should never ever happen.</p>
+<p>Any time your artists/designers have to get up and go get coffee/snacks in the kitchen because things are broken and they can't work - you massively fucked up and you should endeavor to never do that again.</p>
+<p>But there are inevitably problems that we didn't just detect and disable the object (like the pref not found above). Maybe you just get a crash in some code due to an array ref out of bounds, or somewhere deep in the code you detect a bad fault that you can't fix.</p>
+<p>So, as a catch of last measure we used exceptions. The way we did it was to wrap a try/catch around each game object creation &amp; update, and if it caught an exception, that object was removed.</p>
+<pre><span style="color:green;">
+for each object O in the world list
+{
+
+__try
+{
+  O-&gt;Update();
+}
+__except
+{
+  show &amp; email error about O throwing
+  remove O from world list
+  // don't delete the object O since it could still be pointed at by the world, or could be corrupt
+}
+
+}
+
+</span></pre>
+<p>Removing O prevents it from trying to Update again and thus spamming. We assume that once it throws, something is badly broken there and we'll just get rid of it.</p>
+<p>As I said before, this is NOT trying to catch every error and handle it in a robust way. Obviously O may have been partially through with its Update and put the world in a weird state, it may not keep the game from crashing to just remove O, there are lots of possible problems and we don't try to handle them. It's "optimistic" in that sense that we sort of expect it to fail and cause problems, but if it ever does work, then awesome, great, it saved an artist from crashing. In practice it actually works fine 90% of the time.</p>
+<p>We specifically do *not* want to be robust, because writing fully robust exception-safe code (that would have to roll back all the partial changes to the world if there was a throw somewhere through the update) is too onerous. The idea of this system is that it imposes *zero* extra work on programmers writing normal game code.</p>
+<p>We could also manually __throw in some places where appropriate. The criterion for doing that is : not an error you should ever get in the final game, it's a spot where you can't return an error code or just show a failure measure and do some kind of default fallback. You also don't need to __throw if it's a spot where the CPU will throw an interrupt for you.</p>
+<p>For example, places where we might manually __throw : inside a vector push_back if the malloc to extend failed. In an array out of bounds deref. In the smart-pointer deref if the pointer is null.</p>
+<p>Places where we don't __throw : trying to normalize a zero vector or orthonormalize a degenerate frame. These are better to detect, log an error message, and just stuff in unitZ or something, because while that is broken it's a better way to break than the throw-catch mechanism which should only be used if there's no nicer way to stub-out the broken behavior.</p>
+<p>Some (not particularly related) links :</p>
+<p><a href="http://cbloomrants.blogspot.com/2009/02/02-04-09-exceptions.html">cbloom rants 02-04-09 - Exceptions </a><br />
+<a href="http://cbloomrants.blogspot.com/2010/06/06-07-10-exceptions.html">cbloom rants 06-07-10 - Exceptions </a><br />
+<a href="http://cbloomrants.blogspot.com/2011/11/11-09-11-weird-shite-about-exceptions.html">cbloom rants 11-09-11 - Weird shite about Exceptions in Windows </a></p>

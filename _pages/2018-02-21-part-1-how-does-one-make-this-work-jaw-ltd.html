@@ -1,0 +1,43 @@
+---
+layout: page
+title: 'Part 1: How does one make this work?? - JAW Ltd.'
+date: 2018-02-21 22:18:56.000000000 +01:00
+type: page
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+  _wp_page_template: ''
+  _publicize_pending: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+author:
+  login: magogonthemarchstaff
+  email: magogonthemarch@mail.com
+  display_name: magogonthemarchstaff
+  first_name: ''
+  last_name: ''
+permalink: "/part-1-how-does-one-make-this-work-jaw-ltd/"
+---
+<pre>Author: JAW Ltd.
+
+Source: http://www.jawltd.com/2010/09/test/</pre>
+<p>After months of discussions with the team at Oddworld Inhabitants we decided a plan of action to bring Oddworld back to today’s gamers, and that by remastering Oddworld Stranger’s Wrath. So what to tackle first, after all there are a number of things to keep track of and update …</p>
+<p style="padding-left:30px;"><strong>1.</strong> Update the characters to much higher poly counts.</p>
+<p style="padding-left:30px;"><strong>2.</strong> Implement rendered improvements, such as normal maps, self-shadowing and specular maps.</p>
+<p style="padding-left:30px;"><strong>3.</strong> Res up the movies.</p>
+<p style="padding-left:30px;"><strong>4.</strong> Remove placed Xbox controller button graphics from in game textures.</p>
+<p style="padding-left:30px;"><strong>5.</strong> Update the audio, in particular the dialogue quality.</p>
+<p style="padding-left:30px;"><strong>6.</strong> Add in Trophies/Achievements.</p>
+<p style="padding-left:30px;"><strong>7.</strong> Add in game stats to add to Trophies etc.</p>
+<p style="padding-left:30px;"><strong>8.</strong> Update the UI.</p>
+<p>In each of these development diaries we will chose one of the above elements and concentrate on that, in this diary however we will discuss getting the project back up and running from it’s 2005 achieved state, where poly counts were limited to sub-3000 per model, the data build process didn’t work and other little gotchas along the way.</p>
+<p>The first problem we had was getting all the data, of which there is around 30GB of source assets, not bad considering the original game is roughly 2.1GB in size. Once we got the data restored it became apparently that all the tools and the build process was hardwired to drive d:\ of a PC, so next we had to make sure we all had enough space on our d:\ drives.</p>
+<p>For source control we’ve been using Subversion(SVN) for a few years now, which is great for a small indie studio with small-ish projects, as an example Gravity Crash is around 4GB in size. The major issue with using SVN is that it replicates all the files in your repository, so in actuality we didn’t have 4GB of files for Gravity Crash we had 8GB.</p>
+<p>So with Stranger we wouldn’t have 33GB we’d have 66GB. Not really an option for quick iteration development, but we needed some type of asset management. The original team used Perforce, so we gave the Perforce folks a call and they helped us get the original systems up and running, which has saved us masses of time and effort. So 2 weeks of struggle meant we now have a solid build system based on the original.</p>
+<p>When we sorted that out the next step was to start breaking down a list of what needed to be changed.</p>
+<p>I won’t go onto that one yet, but something that’s happened this past week has been the decision to not just update the player models from say 3000 polys to 9000 polys, we took the decision to go upward of 18k, Stranger will have around 20k polys and is already coming together, in the next diary we’ll show you the new look Stranger, in the meantime, below is a comparison between the XBox Stranger, what was to be the PS3 Stranger and the original CG movie Stranger, we hope you enjoy it.</p>
+<p><img class="alignnone size-full wp-image-8695" src="{{ site.baseurl }}/assets/strangercomparison1.jpg" alt="StrangerComparison1" width="2400" height="800" /></p>

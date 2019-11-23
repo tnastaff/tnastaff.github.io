@@ -1,0 +1,47 @@
+---
+layout: page
+title: 'Part 3: Oddworld: Stranger’s Wrath – Dev Diary 3 – Audio'
+date: 2018-02-22 15:40:48.000000000 +01:00
+type: page
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+  _wp_page_template: ''
+  _publicize_pending: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+author:
+  login: magogonthemarchstaff
+  email: magogonthemarch@mail.com
+  display_name: magogonthemarchstaff
+  first_name: ''
+  last_name: ''
+permalink: "/part-3-oddworld-strangers-wrath-dev-diary-3-audio/"
+---
+<pre>Author: JAW Ltd.
+
+Source: http://www.jawltd.com/2010/12/oddworld-strangers-wrath-dev-diary-3-audio/</pre>
+<p>Welcome to the third instalment of the Oddworld: Stranger’s Wrath Development Diary! In this edition, we will take a look at how we have been working on increasing the fidelity of the audio for the next generation!</p>
+<p>To do the work we hired freelance sound designer Michael Taylor, who took on the task of going through the development archives to find all the original audio by Michael Bross, and rebuilding it!</p>
+<p><span style="text-decoration:underline;"><strong>VOICE</strong></span></p>
+<p>One of the biggest disappointments Oddworld Inhabitants had with Stranger’s Wrath was the overall technical quality of the audio, and one of JAW’s main priorities for the re-release. Due to technical limitations of the original Xbox, many of the dialogue audio files were implemented into the game at a sample rate of 11 Kilohertz (KHz) and 8-bit sample resolution! For reference, the range of human hearing is 20 Hz to 20KHz, and music CD quality audio is 44.1KHz / 16-bit, so you can see just how low this is. This process was performed to reduce the size of each audio file and fit them all into the RAM allocated to audio.</p>
+<p>As we have much more RAM to play with on current consoles, our first task was to hunt down the original Master copies (Which were created at 44.1Khz/16-bit) and process them for re-implementation. However, as Stranger is to be a digital distribution title, we were still mindful of the size of the end product, so we created copies of these high-quality assets at the lower sample rate of 22KHz/16-bit and began to add them to the game.</p>
+<p>[audio src="https://magogonthemarch.files.wordpress.com/2018/02/townsfolk_11khz.mp3"][/audio]</p>
+<p>[audio src="https://magogonthemarch.files.wordpress.com/2018/02/townsfolk_22khz.mp3"][/audio]</p>
+<p><span style="text-decoration:underline;"><strong>FX</strong></span></p>
+<p>During the course of adding the effects into the game, we saw several opportunities to increase the quality of the non-voice effects too, and so prompted a trawl through 80 gigs of Oddworld Inhabitants archives to try and locate the Master FX files too! Although a few of the sounds we wanted to update could not be found, many of the worst offenders were located, and brought up to standard with great results! A prime example of this was the ‘Opple Presser’ – a piece of machinery heard during the farm battle, the original sound was a mere 4Khz, and 4-bit! You can hear the difference below;</p>
+<p>[audio src="https://magogonthemarch.files.wordpress.com/2018/02/opplepresser_4khz4bit.mp3"][/audio]</p>
+<p><span style="text-decoration:underline;"><strong>TOOLS</strong></span></p>
+<p><img class="alignnone size-full wp-image-8722" src="{{ site.baseurl }}/assets/3d-audition-150x150.jpg" alt="3D-Audition-150x150" width="150" height="150" /> So, how did we add these sounds to the game? By using a middle-ware audio engine licensed from Firelight Technologies called ‘FMOD Designer’, which is used to set the volumes, pitch randomisation and various other parameters that make the audio shine. We began the porting settings from the original audio engine; XACT, which was part of the Xbox SDK and highly powerful for its time, and this is where the task got interesting….</p>
+<p>XACT, as a 7 year+ old piece of software written for a last-gen console obviously had some variations within its feature set that made the porting of settings a much more troublesome task, but not in the way that you might initially think…</p>
+<p>A small but important example is in the creation of ‘complex’ sound effects – These are sounds that were build up by reusing several other sound effects to create a new one. The elevators in the game are one such sound, with different constructions for each direction, as well as different constructions depending on the elevators location.</p>
+<p><img class="alignnone size-full wp-image-8723" src="{{ site.baseurl }}/assets/complex-events1-150x150.png" alt="Complex-Events1-150x150" width="150" height="150" /> Many of these sounds used a number of DSP effects that were specific to the Xbox hardware, and as such, not available in FMOD Designer. One such effect was something called a ‘Multi-Oscillator LFO’ which was used on a number of sounds to create rhythmic pulses in volume and/or pitch. For the sounds that used this effect as a volume modulator, we simply employed FMOD’s tremolo effect in its place to simulate the effect. For those sounds that were pitch-manipulated, we had actually had to create a copy of the wave file, and add the effect destructively (permanently) in audio editing software. This also reduced the CPU cost of running the effects in real-time!</p>
+<p><span style="text-decoration:underline;"><strong>MUSIC</strong></span></p>
+<p>Once we had implemented all 3000+ sound effects and dialogue lines, it was time to add the fantastic score by Michael Bross! Again, the differences between the XACT music system and FMOD’s music system caused some technical hiccups which led us to having the honour of re-editing some of the music in order to fit into FMODs music system smoothly, as well as bringing a couple of menu pieces up from 22KHz/mono up to 44.1KHz/stereo . (They were originally lower quality than the rest of the music, because they had to sit in-memory at all times, just in case you wanted to pause the game!)</p>
+<p><img class="alignnone size-full wp-image-8724" src="{{ site.baseurl }}/assets/music-editing-150x150.png" alt="Music-Editing-150x150" width="150" height="150" /> And that’s it! We hope this little insight on some of the process behind updating the audio will tide you over until the next diary….</p>
+<p>Still here? Oh, OK then. We suppose it would rude to do an audio related Dev Diary and not post some music... 🙂</p>
+<p>[audio src="https://magogonthemarch.files.wordpress.com/2018/02/mus_battle11.mp3"][/audio]</p>
