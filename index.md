@@ -2,15 +2,6 @@
 layout: index
 ---
 
-<!--
-{% for cat in site.tags %}
-  <h1>{{ cat[0] }}</h1>
-{% for p in cat[1] %}
-  <p><a href="{{p.url}}"> {{p.title}} </a></p>
-{% endfor %}
-{% endfor %}
--->
-
 # Articles categorized by...
 
 <div id = "categories">
@@ -18,7 +9,7 @@ layout: index
     <p>Game</p>
   </a>
 
-  <a href="/">
+  <a href="/categories/years">
   <p>Year</p>
   </a>
 
