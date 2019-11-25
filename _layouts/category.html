@@ -23,11 +23,13 @@
       {% for cat in page.print_categories %}
           <h2>{{ cat }}</h2>
 
+          <ul>
           {% for inner in site.tags[cat] %}
-            <p><a href="{{inner.url}}">{{ inner.title }}</a></p>
+            <li><a href="{{inner.url}}">{{ inner.title }}</a></li>
           {% else %}
-            <p>No articles about this category yet.</p>
+            <li>No articles about this category yet.</li>
           {% endfor %}
+          </ul>
       {% endfor %}
     </div>
     </main>
