@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Prata&display=swap');
+
 body
 {
   font-size: 62.5%;
@@ -9,52 +12,46 @@ body
   max-width: 80rem;
   margin: 0 auto;
 
+  text-align: justify;
 
   line-height: 1.4;
 }
 
 #header
 {
-  height: 20rem;
-  background: #202020;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: #f2f2f2;
+  //height: 10rem;
+  padding: 2rem;
 
-  padding-top: 2rem;
-  padding-bottom: 1rem;
+  //border-bottom: 0.5rem solid;
 
-  flex-direction: column;
-
-  a
-  {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  flex-direction: column;
-  text-decoration: none;
+  img {
+    max-height: 15rem;
   }
 
-  img
-  {
-    height: 14rem;
-    display: block;
+  a {
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+
+    align-items: center;
   }
 
-  #title
-  {
-    color: #efefef;
-    font-size: 4rem;
+  #title {
+    color: black;
+    font-size: 5rem;
     margin: 0;
-    margin-top: 1rem;
+    flex-basis: 100%;
+    font-family: "Prata";
+    font-style: italic;
   }
 }
 
 main
 {
-  display: grid;
-  grid-template-columns: 80% 20%;
+  //display: grid;
+  //grid-template-columns: 80% 20%;
   background: #f2f2f2;
 }
 
@@ -62,20 +59,28 @@ main
 {
   font-size: 1.4rem;
   background: #f2f2f2;
-  padding-top: 4rem;
+  padding-top: 0rem;
 
   padding-left: 6rem;
   padding-right: 6rem;
 
   color: #333333;
 
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    font-family: "Prata";
+  }
 
   h1
   {
     color: #111111;
-    font-family: sans;
     margin: 0;
     line-height: 1.2;
+
+    text-align: center;
   }
 
   img
@@ -102,7 +107,7 @@ main
 
 #sidebar
 {
-  background: #afafaf;
+  background: #f2f2f2;
   padding-top: 4rem;
 
   font-size: 1.3rem;
